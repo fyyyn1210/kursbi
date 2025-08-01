@@ -1,0 +1,15 @@
+{
+    "name": "yourname/kursbi",
+    "description": "Paket pengambil kurs dari BI tanpa service provider",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+      "psr-4": {
+        "KursBI\\": "src/"
+      }
+    },
+    "require": {
+      "guzzlehttp/guzzle": "^7.0",
+      "illuminate/support": "^8.0|^9.0|^10.0"
+    }
+  }
