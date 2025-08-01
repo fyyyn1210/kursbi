@@ -1,9 +1,9 @@
-namespace KursBI;
+namespace Fyyyn1210;
 
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Cache;
 
-class KursService
+class KursBI
 {
     protected $client;
     protected $baseUrl = 'https://www.bi.go.id/biwebservice/wskursbi.asmx/getSubKursLokal3';
@@ -46,6 +46,40 @@ class KursService
             'data'            => $allResults
         ];
     }
+    protected function generateUserAgent()
+    {
+        $os_list = [
+            "Windows NT 10.0",
+            "Windows NT 6.3",
+            "Windows NT 6.1",
+            "Macintosh; Intel Mac OS X 10_15_7",
+            "Macintosh; Intel Mac OS X 10_14_6",
+            "X11; Linux x86_64",
+            "X11; Ubuntu; Linux x86_64"
+        ];
+        $browser_list = [
+            ["name" => "Chrome", "versions" => ["90.0.4430.212", "91.0.4472.124", "92.0.4515.107", "93.0.4577.63"]],
+            ["name" => "Firefox", "versions" => ["88.0", "89.0", "90.0", "91.0"]],
+            ["name" => "Safari", "versions" => ["14.1", "14.0", "13.1.2", "15.0"]],
+            ["name" => "Edge", "versions" => ["91.0.864.59", "92.0.902.67", "93.0.961.38"]]
+        ];
+        $os = $os_list[array_rand($os_list)];
+        $browser = $browser_list[array_rand($browser_list)];
+        $browser_name = $browser["name"];
+        $browser_version = $browser["versions"][array_rand($browser["versions"])];
+        switch ($browser_name) {
+            case "Chrome":
+                return "Mozilla/5.0 ($os) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/$browser_version Safari/537.36";
+            case "Firefox":
+                return "Mozilla/5.0 ($os; rv:$browser_version) Gecko/20100101 Firefox/$browser_version";
+            case "Safari":
+                return "Mozilla/5.0 ($os) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/$browser_version Safari/605.1.15";
+            case "Edge":
+                return "Mozilla/5.0 ($os) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/$browser_version Safari/537.36 Edg/$browser_version";
+            default:
+                return "Mozilla/5.0 ($os) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/$browser_version Safari/537.36";
+        }
+    }
 
     protected function fetchKursFromBI(string $code, string $startDate, string $endDate): array
     {
@@ -59,7 +93,7 @@ class KursService
             $response = $this->client->request('GET', $this->baseUrl, [
                 'query'   => $params,
                 'headers' => [
-                    'User-Agent' => 'Laravel-Kurs-Service',
+                    'User-Agent' => $this->generateUserAgent(),
                     'Accept'     => 'application/xml',
                 ]
             ]);

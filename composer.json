@@ -1,15 +1,35 @@
 {
-    "name": "yourname/kursbi",
-    "description": "Paket pengambil kurs dari BI tanpa service provider",
+    "name": "fyyyn1210/kursbi",
+    "description": "Paket pengambil kurs dari Bank Indonesia tanpa service provider untuk Laravel",
     "type": "library",
     "license": "MIT",
+    "keywords": [
+        "laravel",
+        "bank indonesia",
+        "kurs",
+        "currency",
+        "exchange rate",
+        "currency converter",
+        "bi",
+        "indonesia"
+    ],
+    "homepage": "https://github.com/fyyyn1210/kursbi",
+    "authors": [
+        {
+            "name": "fyyyn1210",
+            "homepage": "https://github.com/fyyyn1210"
+        }
+    ],
     "autoload": {
-      "psr-4": {
-        "KursBI\\": "src/"
-      }
+        "psr-4": {
+            "Fyyyn1210\\": "src/"
+        }
     },
     "require": {
-      "guzzlehttp/guzzle": "^7.0",
-      "illuminate/support": "^8.0|^9.0|^10.0"
-    }
-  }
+        "php": ">=7.4",
+        "guzzlehttp/guzzle": "^7.0",
+        "illuminate/support": "^8.0|^9.0|^10.0"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
