@@ -4,7 +4,7 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/fyyyn1210/kursbi.svg?style=flat-square)](https://packagist.org/packages/fyyyn1210/kursbi)
 [![License](https://img.shields.io/packagist/l/fyyyn1210/kursbi.svg?style=flat-square)](https://packagist.org/packages/fyyyn1210/kursbi)
 
-**Paket PHP untuk mengambil data kurs mata uang dari Bank Indonesia (BI) tanpa perlu service provider Laravel.**
+**Paket PHP untuk mengambil data kurs mata uang dari Bank Indonesia (BI) untuk PHP & Laravel.**
 
 ## 📋 Deskripsi
 
