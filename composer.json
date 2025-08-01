@@ -1,6 +1,6 @@
 {
     "name": "fyyyn1210/kursbi",
-    "description": "Paket pengambil kurs dari Bank Indonesia tanpa service provider untuk Laravel",
+    "description": "Laravel package sederhana untuk mengambil data kurs mata uang Bank Indonesia secara dinamis dengan fitur filter tanggal, jumlah konversi, dan limit hasil.",
     "type": "library",
     "license": "MIT",
     "keywords": [
