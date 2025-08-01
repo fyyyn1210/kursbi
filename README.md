@@ -503,7 +503,7 @@ Jika Anda menemukan bug, silakan buat issue di [GitHub Issues](https://github.co
 Jika Anda butuh bantuan atau memiliki pertanyaan, silakan:
 
 - Buka issue di GitHub
-- Email: [your-email@example.com]
+- Email: [riosraskaa@gmail.com]
 
 ## 🎉 Credits
 
